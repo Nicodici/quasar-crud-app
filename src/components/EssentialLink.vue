@@ -1,5 +1,8 @@
 <template>
-  <q-item clickable tag="a" target="_blank" :href="props.link">
+  <q-item clickable :tag="isExternalLink ? 'a' : 'div'"
+  :target="isExternalLink ? '_blank' : '_self'"
+  :to="isExternalLink ? props.link : undefined"
+  :href="props.link">
     <q-item-section v-if="props.icon" avatar>
       <q-icon :name="props.icon" />
     </q-item-section>
@@ -12,6 +15,8 @@
 </template>
 
 <script setup>
+import { computed, defineProps } from 'vue'
+
 const props = defineProps({
   title: {
     type: String,
@@ -32,5 +37,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+})
+
+//Funcion que verifica si el link es externo o interno, para abrirlo en una nueva pestaña o no
+const isExternalLink = computed(() => {
+  return props.link.startsWith('http://') || props.link.startsWith('https://')
 })
 </script>

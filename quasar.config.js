@@ -11,7 +11,7 @@ export default defineConfig((/* ctx */) => {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: ['axios'],
+    boot: ['axios', 'firebase'],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#css
     css: ['app.scss'],
@@ -37,7 +37,7 @@ export default defineConfig((/* ctx */) => {
         node: 'node20',
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -102,7 +102,7 @@ export default defineConfig((/* ctx */) => {
     // sourceFiles: {
     //   rootComponent: 'src/App.vue',
     //   router: 'src/router/index',
-    //   store: 'src/store/index',
+      store: 'src/store/index',
     //   pwaRegisterServiceWorker: 'src-pwa/register-service-worker',
     //   pwaServiceWorker: 'src-pwa/custom-service-worker',
     //   pwaManifestFile: 'src-pwa/manifest.json',

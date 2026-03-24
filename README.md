@@ -41,3 +41,12 @@ quasar build
 ### Customize the configuration
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+
+### Instalacion y configuracion de Firebase
+
+npm install firebase
+
+En la carpeta Boot crearemos un archivo firebase.js con la configuración de conexion a firebase.
+
+
